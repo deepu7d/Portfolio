@@ -7,7 +7,7 @@ export default function Home() {
     <Wrapper>
       <div className="flex flex-col gap-10">
         <div className="pt-10">
-          <h1 className="text-4xl font-bold">Hi, I'm Deepanshu</h1>
+          <h1 className="text-4xl font-bold">{"Hi, I'm Deepanshu"}</h1>
         </div>
         <div>
           <h1 className="pb-10">Projects</h1>
