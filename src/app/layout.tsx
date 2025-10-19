@@ -10,6 +10,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Deepanshu",
   description: "Learn more about Deepanshu",
+  icons: "/icon.png",
 };
 
 export default function RootLayout({
