@@ -3,7 +3,7 @@ import React from "react";
 export default function Navbar() {
   return (
     <div className="flex w-full items-center justify-between p-4 pt-8 lg:pt-10">
-      <h1 className="inline-block bg-gradient-to-r from-white to-neutral-200 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
+      <h1 className="inline-block bg-gradient-to-r from-neutral-50 via-neutral-100 to-neutral-50 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
         {"Deepanshu"}
       </h1>
       <div className="flex gap-5">
