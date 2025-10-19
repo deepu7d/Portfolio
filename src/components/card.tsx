@@ -1,12 +1,11 @@
 import type { SVGProps } from "react";
-import { LinkPreview } from "./ui/link-preview";
 
 export type CardProps = {
   title: string;
   description: string;
   github: string;
   demo: string;
-  status: boolean;
+  completed: boolean;
   techStack: string[];
 };
 
@@ -15,38 +14,36 @@ export default function Card({
   description,
   github,
   demo,
-  status,
+  completed,
   techStack,
 }: CardProps) {
   return (
-    <article className="flex w-[256px] flex-col rounded-xl border border-neutral-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg lg:w-[512px] dark:border-neutral-800 dark:bg-neutral-900/50">
+    <article className="flex w-full flex-col border border-neutral-200 bg-white shadow-md shadow-slate-900/50 transition-shadow duration-300 hover:shadow-xl md:w-lg dark:border-neutral-800 dark:bg-neutral-900/50">
       {/* ====== Iframe Preview Section ====== */}
 
       {/* ====== Content Section ====== */}
       <div className="flex flex-1 flex-col justify-between p-6">
-        <div>
-          <div className="flex items-start justify-between gap-4">
-            <LinkPreview url={demo}>
-              <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
-                {title}
-              </h3>
-            </LinkPreview>
-            <div className="flex shrink-0 items-center gap-2">
+        <div className="flex flex-col gap-4 md:gap-0">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row">
+            <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
+              {title}
+            </h3>
+            <div className="flex shrink-0 items-center gap-4">
               <span
                 className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                  status
+                  completed
                     ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300"
                     : "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300"
                 }`}
               >
-                {status ? "Completed" : "In Progress"}
+                {completed ? "Completed" : "In Progress"}
               </span>
               <a
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Open ${title} on GitHub`}
-                className="rounded-md p-1.5 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+                className="rounded-md text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
               >
                 <GithubIcon className="h-5 w-5" />
               </a>
@@ -54,8 +51,8 @@ export default function Card({
                 href={demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Open ${title} demo`}
-                className="rounded-md p-1.5 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+                aria-label={`Open ${title} Demo`}
+                className="rounded-md text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
               >
                 <ExternalLinkIcon className="h-5 w-5" />
               </a>
