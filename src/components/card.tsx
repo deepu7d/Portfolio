@@ -18,7 +18,7 @@ export default function Card({
   techStack,
 }: CardProps) {
   return (
-    <article className="flex w-full flex-col border border-neutral-200 bg-white shadow-md shadow-slate-900/50 transition-shadow duration-300 hover:shadow-xl md:w-lg dark:border-neutral-800 dark:bg-neutral-900/50">
+    <article className="flex w-full flex-col border border-neutral-200 bg-white shadow-md shadow-slate-900/50 transition-shadow duration-300 hover:shadow-lg md:w-lg dark:border-neutral-800 dark:bg-neutral-900/50">
       {/* ====== Iframe Preview Section ====== */}
 
       {/* ====== Content Section ====== */}
