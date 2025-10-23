@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import SideBar from "@/components/sidebar";
+import Header from "@/components/header";
+import TabBar from "@/components/tab-bar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,7 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.className} antialiased`}>
+        <div className="flex">
+          <SideBar />
+          <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 p-10">
+            <Header />
+            <TabBar />
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
