@@ -5,7 +5,7 @@ import { BIO } from "@/constants/bio";
 export default function HeaderMobile() {
   return (
     <header className="flex w-full flex-col justify-start md:hidden">
-      <div aria-label="bio" className="flex flex-col gap-5 p-4">
+      <div aria-label="bio" className="flex flex-col gap-2 p-4">
         <section className="flex w-full gap-5">
           <section aria-label="profile-pic" className="my-auto">
             <div className="h-24 w-24 rounded-full bg-gradient-to-br from-[#FEDA75] via-[#DD2A7B] to-[#8134AF] p-1">
@@ -13,7 +13,7 @@ export default function HeaderMobile() {
             </div>
           </section>
           <section className="text-md flex flex-col items-start justify-center gap-2">
-            <h1 className="text-lg font-medium">{BIO.username}</h1>
+            <h1 className="text-lg font-medium">{BIO.name}</h1>
             <section>
               <ul className="flex gap-5">
                 {BIO.stats.map((stat) => (
@@ -30,7 +30,6 @@ export default function HeaderMobile() {
           </section>
         </section>
         <section className="text-sm">
-          <h1 className="font-bold">{BIO.name}</h1>
           <h2 className="text-neutral-400">{BIO.profession}</h2>
           <h2>📍{BIO.location}</h2>
           <p>

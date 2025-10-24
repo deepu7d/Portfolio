@@ -8,6 +8,7 @@ export const CARD_DATA: CardProps[] = [
     github: "https://github.com/deepu7d/mapWise",
     demo: "https://map.deepudev.xyz",
     completed: false,
+    image: "/projects/mapwise.jpeg",
     techStack: [
       "Next.js",
       "Express",
@@ -27,6 +28,7 @@ export const CARD_DATA: CardProps[] = [
     demo: "https://ui.deepudev.xyz/",
     completed: false,
     techStack: ["Next.js", "Framer Motion", "GSAP", "Tailwind CSS", "Shadcn"],
+    image: "/projects/cool-ui.jpeg",
   },
   {
     title: "Mystery Lnk",
@@ -35,6 +37,7 @@ export const CARD_DATA: CardProps[] = [
     demo: "https://mystery-lnk.vercel.app/",
     completed: true,
     techStack: ["Next.js", "MongoDB", "Mongoose", "NextAuth.js", "Resend"],
+    image: "/projects/mystery-lnk.jpeg",
   },
   {
     title: "Planet Game",
@@ -43,6 +46,7 @@ export const CARD_DATA: CardProps[] = [
     demo: "https://deepu7d.github.io/PlanetGame/",
     completed: true,
     techStack: ["p5.js", "JavaScript", "HTML", "CSS", "WebGL", "OOP"],
+    image: "/projects/mystery-lnk.jpeg",
   },
   {
     title: "SolarWise",
@@ -52,6 +56,7 @@ export const CARD_DATA: CardProps[] = [
     demo: "https://solarwise-henna.vercel.app/",
     completed: true,
     techStack: ["Next.js", "React-leaflet", "Flask", "ML"],
+    image: "/projects/mapwise.jpeg",
   },
   {
     title: "Notes App 😢",
@@ -60,5 +65,6 @@ export const CARD_DATA: CardProps[] = [
     demo: "https://notes-app-deepanshu.vercel.app/",
     completed: true,
     techStack: ["React", "Supabase", "React Router", "Vanilla CSS"],
+    image: "/projects/notes-app.jpeg",
   },
 ];

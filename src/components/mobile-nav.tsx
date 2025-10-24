@@ -29,7 +29,7 @@ export default function MobileNav() {
       )}
       <nav className="sticky top-0 left-0 flex w-full items-center justify-between gap-2 border-b-1 border-neutral-500/50 bg-black p-2 px-4 md:hidden">
         <IconMenu2 onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-1">
           <h1 className="font-bold">{BIO.username}</h1>
           <IconRosetteDiscountCheckFilled className="h-6 w-6 text-blue-500" />
         </div>

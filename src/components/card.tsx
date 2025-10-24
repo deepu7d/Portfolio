@@ -1,3 +1,5 @@
+import { IconMessageCircleFilled, IconStarFilled } from "@tabler/icons-react";
+import Image from "next/image";
 import type { SVGProps } from "react";
 
 export type CardProps = {
@@ -5,6 +7,7 @@ export type CardProps = {
   description: string;
   github: string;
   demo: string;
+  image: string;
   completed: boolean;
   techStack: string[];
 };
@@ -16,66 +19,82 @@ export default function Card({
   demo,
   completed,
   techStack,
+  image,
 }: CardProps) {
   return (
-    <article className="flex w-full flex-col border border-neutral-200 bg-white shadow-md shadow-slate-900/50 transition-shadow duration-300 hover:bg-neutral-800/50 md:w-[340px] dark:border-neutral-800 dark:bg-neutral-900/50">
-      {/* ====== Iframe Preview Section ====== */}
-      {/* <iframe src={demo} height={400}></iframe> */}
+    // <article className="flex w-full flex-col border border-neutral-200 bg-white shadow-md shadow-slate-900/50 transition-shadow duration-300 hover:bg-neutral-800/50 md:w-[340px] dark:border-neutral-800 dark:bg-neutral-900/50">
+    //   {/* ====== Iframe Preview Section ====== */}
+    //   {/* <iframe src={demo} height={400}></iframe> */}
 
-      {/* ====== Content Section ====== */}
-      <div className="flex flex-1 flex-col justify-between p-6">
-        <div className="flex flex-col gap-4 md:gap-0">
-          <div className="flex flex-col items-start justify-between gap-4 md:flex-row">
-            <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
-              {title}
-            </h3>
-            <div className="flex shrink-0 items-center gap-4">
-              <span
-                className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                  completed
-                    ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300"
-                    : "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300"
-                }`}
-              >
-                {completed ? "Completed" : "In Progress"}
-              </span>
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open ${title} on GitHub`}
-                className="rounded-md text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
-              >
-                <GithubIcon className="h-5 w-5" />
-              </a>
-              <a
-                href={demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open ${title} Demo`}
-                className="rounded-md text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
-              >
-                <ExternalLinkIcon className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-          <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-            {description}
-          </p>
-        </div>
+    //   {/* ====== Content Section ====== */}
+    //   <div className="flex flex-1 flex-col justify-between p-6">
+    //     <div className="flex flex-col gap-4 md:gap-0">
+    //       <div className="flex flex-col items-start justify-between gap-4 md:flex-row">
+    //         <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
+    //           {title}
+    //         </h3>
+    //         <div className="flex shrink-0 items-center gap-4">
+    //           <span
+    //             className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+    //               completed
+    //                 ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300"
+    //                 : "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300"
+    //             }`}
+    //           >
+    //             {completed ? "Completed" : "In Progress"}
+    //           </span>
+    //           <a
+    //             href={github}
+    //             target="_blank"
+    //             rel="noopener noreferrer"
+    //             aria-label={`Open ${title} on GitHub`}
+    //             className="rounded-md text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+    //           >
+    //             <GithubIcon className="h-5 w-5" />
+    //           </a>
+    //           <a
+    //             href={demo}
+    //             target="_blank"
+    //             rel="noopener noreferrer"
+    //             aria-label={`Open ${title} Demo`}
+    //             className="rounded-md text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+    //           >
+    //             <ExternalLinkIcon className="h-5 w-5" />
+    //           </a>
+    //         </div>
+    //       </div>
+    //       <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+    //         {description}
+    //       </p>
+    //     </div>
 
-        <div className="mt-4 flex flex-wrap items-center gap-2 pt-2">
-          {techStack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-md bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300"
-            >
-              {tech}
-            </span>
-          ))}
+    //     <div className="mt-4 flex flex-wrap items-center gap-2 pt-2">
+    //       {techStack.map((tech) => (
+    //         <span
+    //           key={tech}
+    //           className="rounded-md bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-700 dark:bg-neutral-800/80 dark:text-neutral-300"
+    //         >
+    //           {tech}
+    //         </span>
+    //       ))}
+    //     </div>
+    //   </div>
+    // </article>
+    <div className="group relative cursor-pointer">
+      <Image
+        src={image}
+        alt="Placeholder"
+        width={300}
+        height={300}
+        className="z-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 flex items-center justify-center gap-4 bg-black/50 p-4 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <div>
+          <IconStarFilled />
         </div>
+        <IconMessageCircleFilled />
       </div>
-    </article>
+    </div>
   );
 }
 
