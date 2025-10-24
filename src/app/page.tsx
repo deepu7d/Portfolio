@@ -1,4 +1,4 @@
-import { CARD_DATA } from "@/constants";
+import { CARD_DATA } from "@/constants/projects";
 import Card from "@/components/card";
 
 export default function Home() {

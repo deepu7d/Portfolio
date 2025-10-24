@@ -1,24 +1,6 @@
-import {
-  IconDots,
-  IconMenu2,
-  IconRosetteDiscountCheckFilled,
-} from "@tabler/icons-react";
+import Buttons from "./buttons";
 import Stories from "./stories";
-
-const PROFILE_STATS = [
-  {
-    title: "posts",
-    count: "18",
-  },
-  {
-    title: "followers",
-    count: "230",
-  },
-  {
-    title: "following",
-    count: "180",
-  },
-];
+import { BIO } from "@/constants/bio";
 
 export default function HeaderMobile() {
   return (
@@ -31,10 +13,10 @@ export default function HeaderMobile() {
             </div>
           </section>
           <section className="text-md flex flex-col items-start justify-center gap-2">
-            <h1 className="text-lg font-medium">deepu7d</h1>
+            <h1 className="text-lg font-medium">{BIO.username}</h1>
             <section>
               <ul className="flex gap-5">
-                {PROFILE_STATS.map((stat) => (
+                {BIO.stats.map((stat) => (
                   <li
                     key={stat.title}
                     className="flex flex-col items-start justify-center"
@@ -48,27 +30,22 @@ export default function HeaderMobile() {
           </section>
         </section>
         <section className="text-sm">
-          <h1 className="font-bold">Deepanshu Saini</h1>
-          <h2 className="text-neutral-400">Software Developer</h2>
-          <h2>📍Delhi/Ambala</h2>
+          <h1 className="font-bold">{BIO.name}</h1>
+          <h2 className="text-neutral-400">{BIO.profession}</h2>
+          <h2>📍{BIO.location}</h2>
           <p>
-            Developer <span className="text-blue-600">{"@hireme"}</span>
+            Developer <span className="text-blue-600">{`@${BIO.company}`}</span>
             {"  :("}
           </p>
-          <p>I love websockets</p>
-          {/* <a href="https://deepudev.xyz">Click here</a> */}
+          {BIO.description.map((desc, index) => (
+            <p key={index}>{desc}</p>
+          ))}
           <p className="pt-4 text-neutral-400">
-            Followed by <span className="text-white">Elon Musk</span>
+            Followed by{" "}
+            <span className="text-white">{BIO.followedBy.join(", ")}</span>
           </p>
         </section>
-        <div className="flex gap-2">
-          <button className="w-full rounded-lg bg-blue-600 p-1 font-medium">
-            Follow
-          </button>
-          <button className="w-full rounded-lg bg-neutral-800 p-1 font-medium">
-            Message
-          </button>
-        </div>
+        <Buttons className="w-full" />
         <Stories />
       </div>
     </header>

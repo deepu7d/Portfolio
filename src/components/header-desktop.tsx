@@ -1,20 +1,8 @@
 import { IconDots, IconRosetteDiscountCheckFilled } from "@tabler/icons-react";
 import Stories from "./stories";
-
-const PROFILE_STATS = [
-  {
-    title: "posts",
-    count: "18",
-  },
-  {
-    title: "followers",
-    count: "230",
-  },
-  {
-    title: "following",
-    count: "180",
-  },
-];
+import { BIO } from "@/constants/bio";
+import Buttons from "./buttons";
+import Modal from "./modal";
 
 export default function HeaderDesktop() {
   return (
@@ -29,22 +17,17 @@ export default function HeaderDesktop() {
           <section className="flex w-full flex-col gap-5">
             <section className="text-md flex items-center justify-center gap-4">
               <div className="flex items-center justify-center gap-2">
-                <h1 className="text-2xl">deepu7d</h1>
+                <h1 className="text-2xl">{BIO.username}</h1>
                 <IconRosetteDiscountCheckFilled className="inline-block h-6 w-6 text-blue-500" />
               </div>
-              <div className="flex gap-2">
-                <button className="w-24 rounded-lg bg-blue-600 p-1 font-medium">
-                  Follow
-                </button>
-                <button className="w-24 rounded-lg bg-neutral-800 p-1 font-medium">
-                  Message
-                </button>
-              </div>
-              <IconDots />
+              <Buttons />
+              <Modal>
+                <IconDots />
+              </Modal>
             </section>
             <section>
               <ul className="flex justify-between">
-                {PROFILE_STATS.map((stat) => (
+                {BIO.stats.map((stat) => (
                   <li key={stat.title} className="flex gap-1">
                     <span className="font-bold">{stat.count}</span>
                     <span className="text-neutral-400">{stat.title}</span>
@@ -54,17 +37,20 @@ export default function HeaderDesktop() {
             </section>
           </section>
           <section className="text-sm">
-            <h1 className="font-bold">Deepanshu Saini</h1>
-            <h2 className="text-neutral-400">Software Developer</h2>
-            <h2>📍Delhi/Ambala</h2>
+            <h1 className="font-bold">{BIO.name}</h1>
+            <h2 className="text-neutral-400">{BIO.profession}</h2>
+            <h2>📍{BIO.location}</h2>
             <p>
-              Developer <span className="text-blue-600">{"@hireme"}</span>
+              Developer{" "}
+              <span className="text-blue-600">{`@${BIO.company}`}</span>
               {"  :("}
             </p>
-            <p>I love websockets</p>
-            {/* <a href="https://deepudev.xyz">Click here</a> */}
+            {BIO.description.map((desc, index) => (
+              <p key={index}>{desc}</p>
+            ))}
             <p className="pt-4 text-neutral-400">
-              Followed by <span className="text-white">Elon Musk</span>
+              Followed by{" "}
+              <span className="text-white">{BIO.followedBy.join(", ")}</span>
             </p>
           </section>
         </div>

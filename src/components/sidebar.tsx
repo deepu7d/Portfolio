@@ -7,13 +7,11 @@ import React from "react";
 
 export default function SideBar() {
   return (
-    <div className="sticky top-0 hidden h-dvh flex-col items-center gap-10 border-r-2 border-neutral-800/50 p-8 pt-8 md:flex lg:pt-10">
-      <h1 className="inline-block bg-gradient-to-r from-neutral-50 via-neutral-100 to-neutral-50 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
-        <InstagramLogo />
-      </h1>
-      <div className="flex flex-col gap-10 pt-5 text-lg">
+    <div className="sticky top-0 h-dvh flex-col items-center border-r-2 border-neutral-800/50 p-8 pt-8 md:flex lg:pt-10">
+      <InstagramLogo />
+      <div className="flex flex-col gap-8 pt-15 text-lg">
         <a
-          href="https://www.linkedin.com/in/deepanshu-s-61825824a/"
+          href="https://www.github.com/deepu7d"
           className="flex items-center justify-center gap-2 hover:text-blue-400"
           target="_blank"
         >
@@ -21,7 +19,7 @@ export default function SideBar() {
           <span>Github</span>
         </a>
         <a
-          href="https://www.github.com/deepu7d"
+          href="https://www.linkedin.com/in/deepanshu-s-61825824a/"
           target="_blank"
           className="flex items-center justify-center gap-2 hover:text-blue-400"
         >

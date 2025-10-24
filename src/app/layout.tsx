@@ -11,6 +11,7 @@ import {
   IconMenu2,
   IconRosetteDiscountCheckFilled,
 } from "@tabler/icons-react";
+import MobileNav from "@/components/mobile-nav";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,14 +33,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
         <div className="flex">
-          <SideBar />
+          <div className="hidden md:block">
+            <SideBar />
+          </div>
           <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center md:p-10">
-            <nav className="sticky top-0 left-0 flex w-full items-center justify-center gap-2 border-b-1 border-neutral-500/50 bg-black p-2 md:hidden">
-              <IconMenu2 className="absolute left-4" />
-              <h1 className="font-bold">deepu7d</h1>
-              <IconRosetteDiscountCheckFilled className="inline-block h-6 w-6 text-blue-500" />
-              <IconDotsVertical className="absolute right-4" />
-            </nav>
+            <MobileNav />
             <HeaderMobile />
             <HeaderDesktop />
             <TabBar />
