@@ -20,7 +20,7 @@ const TAB_ITEMS = [
 export default function TabBar() {
   const [activeTab, setActiveTab] = useState<string>("Project");
   return (
-    <ul className="flex w-full justify-center gap-20 border-b-1 border-neutral-600">
+    <ul className="flex w-full justify-around border-b-1 border-neutral-600 pt-4 md:pt-10">
       {TAB_ITEMS.map((item) => (
         <li
           key={item.title}

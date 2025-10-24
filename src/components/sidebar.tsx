@@ -7,7 +7,7 @@ import React from "react";
 
 export default function SideBar() {
   return (
-    <div className="sticky top-0 flex h-dvh flex-col items-center gap-10 border-r-2 border-neutral-800/50 p-8 pt-8 lg:pt-10">
+    <div className="sticky top-0 hidden h-dvh flex-col items-center gap-10 border-r-2 border-neutral-800/50 p-8 pt-8 md:flex lg:pt-10">
       <h1 className="inline-block bg-gradient-to-r from-neutral-50 via-neutral-100 to-neutral-50 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
         <InstagramLogo />
       </h1>
